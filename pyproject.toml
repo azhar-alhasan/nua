@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nua"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "langgraph>=1.0",
+    "langchain-openai>=0.2",
+    "langchain-core>=0.3",
+    "langsmith>=0.1",
+    "tavily-python>=0.3",
+    "firecrawl-py>=1.0",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agent", "src/tools", "src/context", "src/evaluation", "src/utils"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["src"]

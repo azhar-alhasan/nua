@@ -1,0 +1,12 @@
+.venv/
+.env
+**/__pycache__/
+.DS_Store
+*.pyc
+.playwright-mcp/
+*.egg-info/
+dist/
+.langgraph_cache/
+.langgraph_api 
+.pytest_cache/
+.claude
